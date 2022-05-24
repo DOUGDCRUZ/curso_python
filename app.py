@@ -6,13 +6,13 @@ No terminal:
 * pip freeze > requirements.txt # criar arquivo requirements com todas as saídas do pip freeze
 '''
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask('Hello')   #Flask é uma classe
 
 @app.route('/hello')    #criar uma rota => página WEB com nome hello
 def hello():
-    return 'Olá Douglas!'
+    return render_template('hello.html')
 @app.route('/tchau')    #criar uma rota => página WEB com nome hello
 def tchau():
     return 'tchau'
